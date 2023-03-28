@@ -3,6 +3,7 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { AdminModule } from './admin.module';
 async function bootstrap() {
   const app = await NestFactory.create(AdminModule);
+  app.enableCors()
 
   const option = new DocumentBuilder()
     .setTitle('山芽-后台管理API')

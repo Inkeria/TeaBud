@@ -1,19 +1,28 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
+import Vue from 'vue'
+import VueRouter, { RouteConfig } from 'vue-router'
+import { component } from 'vue/types/umd'
 import HomeView from '../views/HomeView.vue'
 import MainView from '../views/MainView.vue'
-const routes = [
+import ListView from '../views/videos/ListView.vue'
+import VideoEdit from '../views/videos/VideoEdit.vue'
+
+Vue.use(VueRouter)
+
+const routes: RouteConfig[] = [
   {
     path: '/',
-    name: 'main',
     component: MainView,
-    children:[
-      {name:'home', path: '/', component: HomeView}
+    children: [
+      {name:'home', path:'/', component: HomeView},
+      {name:'list', path:'videos/list', component: ListView},
+      {name:'edit', path:'videos/edit/:id', component: VideoEdit, props: true},
+      {name:'create', path:'videos/create', component: VideoEdit},
     ]
-  }
+  },
+
 ]
 
-const router = createRouter({
-  history: createWebHashHistory(),
+const router = new VueRouter({
   routes
 })
 

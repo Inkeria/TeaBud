@@ -1,5 +1,7 @@
 {
   "dependencies": {
-    "nestjs-mongoose-crud": "^2.1.2"
+    "nestjs-mongoose-crud": "^2.1.2",
+    "unplugin-auto-import": "^0.15.1",
+    "unplugin-vue-components": "^0.24.1"
   }
 }

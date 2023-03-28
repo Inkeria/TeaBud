@@ -1,14 +1,26 @@
-<template>
-  
-  <div id = "app"> 
-    <router-view>
 
-    </router-view>
+import router from './router';
+
+<template>
+  <div id="app">
+    <router-view></router-view>
   </div>
 </template>
+
+
 <script lang = "ts">
+import { Component, Vue } from 'vue-property-decorator';
+import HelloWorld from './components/HelloWorld.vue';
+@Component({
+  components:{
+    HelloWorld,
+  }
+})
+export default class App extends Vue{} 
 </script>
 
 <style>
-
+body{
+  margin: 0;
+}
 </style>
